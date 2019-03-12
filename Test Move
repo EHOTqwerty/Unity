@@ -1,0 +1,32 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class TestMove : MonoBehaviour {
+
+	float s = 0.1f;
+
+	// Use this for initialization
+	void Start () {
+		
+	}
+	
+	// Update is called once per frame
+	void Update () {
+		float x = gameObject.GetComponent<Transform> ().position.x;
+		float y = gameObject.GetComponent<Transform> ().position.y;
+		if (Input.GetKey (KeyCode.W)) {
+			y += s;
+		}
+		if (Input.GetKey (KeyCode.A)) {
+			x -= s;
+		}
+		if (Input.GetKey (KeyCode.S)) {
+			y -= s;
+		}
+		if (Input.GetKey (KeyCode.D)) {
+			x += s;
+		}
+		gameObject.GetComponent<Transform> ().position = new Vector3 (x, y, 10f);
+	}
+}

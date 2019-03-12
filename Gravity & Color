@@ -1,0 +1,40 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+
+public class NewBehaviourScript : MonoBehaviour {
+
+
+
+	// Use this for initialization
+	void Start () {
+	}
+	
+	// Update is called once per frame
+	void Update () {
+		if (Input.GetKeyDown (KeyCode.Q)) {
+			gameObject.GetComponent<Renderer>().material.color = Color.red;
+		}
+
+		if (Input.GetKeyUp (KeyCode.Q)) {
+			gameObject.GetComponent<Renderer> ().material.color = Color.blue;
+		}
+		if (Input.GetKeyDown (KeyCode.W)) {
+			gameObject.GetComponent<Renderer>().material.color = Color.white;
+		}
+
+		if (Input.GetKeyUp (KeyCode.W)) {
+			gameObject.GetComponent<Renderer> ().material.color = Color.green;
+		}
+
+		if (Input.GetKeyUp (KeyCode.E)) {
+			gameObject.GetComponent<Rigidbody2D> ().gravityScale = 1.0F;
+		}
+
+		if (Input.GetKeyDown (KeyCode.E)) {
+			gameObject.GetComponent<Rigidbody2D> ().gravityScale = -1.0f;
+		}
+	}
+}
